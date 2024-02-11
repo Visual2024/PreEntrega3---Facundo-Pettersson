@@ -2,7 +2,7 @@
     {
         "id": "botines-01",
         "titulo": "Botines 01",
-        "imagen": "../img/botines/botines.png",
+        "imagen": "./img/botines/botines.png",
         "categoria": {
             "nombre": "botines",
             "id": "botines"
@@ -12,7 +12,7 @@
     {
         "id": "botines-02",
         "titulo": "Botines 02",
-        "imagen": "../img/botines/botines-2.png",
+        "imagen": "./img/botines/botines-2.png",
         "categoria": {
             "nombre": "botines",
             "id": "botines"
@@ -22,7 +22,7 @@
     {
         "id": "botines-03",
         "titulo": "Botines 03",
-        "imagen": "../img/botines/botines-3.png",
+        "imagen": "./img/botines/botines-3.png",
         "categoria": {
             "nombre": "botines",
             "id": "botines"
@@ -32,7 +32,7 @@
     {
         "id": "botines-04",
         "titulo": "Botines 04",
-        "imagen": "../img/botines/botines-4.png",
+        "imagen": "./img/botines/botines-4.png",
         "categoria": {
             "nombre": "botines",
             "id": "botines"
@@ -42,7 +42,7 @@
     {
         "id": "camiseta-01",
         "titulo": "Camiseta 01",
-        "imagen": "../img/camisetas/Camisa-1.png",
+        "imagen": "./img/camisetas/Camisa-1.png",
         "categoria": {
             "nombre": "camisetas",
             "id": "camisetas"
@@ -52,7 +52,7 @@
     {
         "id": "camiseta-02",
         "titulo": "Camiseta 02",
-        "imagen": "../img/camisetas/Camisa-2.png",
+        "imagen": "./img/camisetas/Camisa-2.png",
         "categoria": {
             "nombre": "camisetas",
             "id": "camisetas"
@@ -62,7 +62,7 @@
     {
         "id": "camiseta-03",
         "titulo": "Camiseta 03",
-        "imagen": "../img/camisetas/Camisa-3.png",
+        "imagen": "./img/camisetas/Camisa-3.png",
         "categoria": {
             "nombre": "camisetas",
             "id": "camisetas"
@@ -72,7 +72,7 @@
     {
         "id": "camiseta-04",
         "titulo": "Camiseta 04",
-        "imagen": "../img/camisetas/Camisa-4.png",
+        "imagen": "./img/camisetas/Camisa-4.png",
         "categoria": {
             "nombre": "camisetas",
             "id": "camisetas"
