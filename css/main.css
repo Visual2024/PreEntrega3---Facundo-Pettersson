@@ -60,6 +60,8 @@ aside {
 .logo {
     font-weight: 400;
     font-size: 1.3rem;
+
+    margin-bottom: 2rem;
 }
 
 .menu {
@@ -148,10 +150,87 @@ main {
     padding: 3rem;
 }
 
-.titulo-principal {
-    color: var(--clr-main);
-    margin-bottom: 2rem;
+.container-title_principal {
+    display: flex;
+    flex-flow : row-reverse wrap;
+
+    justify-content: start;
+    align-content: center;
+
+
+    & .titulo-principal {
+        color: var(--clr-main);
+        margin-bottom: 2rem;
+    }
+    
+    & .container-search {
+        display: flex;
+        flex-flow: row wrap;
+
+        align-items: center;
+        justify-items: center;
+        align-content: center;
+
+        width: 40%;
+
+        justify-content: space-between;
+
+        margin-left: 1rem;
+        & .form-control{
+            position: absolute;
+
+            outline: none;
+            
+            margin-left: 2rem;
+    
+            background-color: black;
+            color: white;
+
+            width: 17rem;
+            height: 2rem;
+        
+            border-radius: 10px;
+            border: 4px 0 0 0 solid white;
+
+            margin-bottom: 2rem;
+
+            padding-left: 1.9rem;
+            box-shadow:  5px 2px 4px rgba(102, 90, 90, 0.8);
+        }
+        & .bi {
+            display: inline-block;
+
+            color: rgb(255, 255, 255);
+
+            margin-bottom: 2rem;
+            margin-left: 2.5rem;
+
+            z-index: 999;
+
+        }
+        & .btn {
+            position: relative;
+            left: -1.99%;
+            top: -1rem;
+
+            padding: 4px;
+            
+            border: 1px solid gray;
+            border-radius: 5px;
+
+            width: 66px;
+
+            transition: all 1s;
+        }
+        & .btn:hover {
+            background-color: #785ce9;
+        }
+    }
+    
+    
+    
 }
+
 
 .contenedor-productos {
     display: grid;
@@ -163,6 +242,8 @@ main {
     max-width: 100%;
     border-radius: 1rem;
 }
+
+
 
 .producto-detalles {
     background-color: var(--clr-main);

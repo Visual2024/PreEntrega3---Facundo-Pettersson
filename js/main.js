@@ -1,11 +1,11 @@
 let productos = [];
 
-fetch("./js/productos.json")
+fetch("./db/productos.json")
     .then(response => response.json())
     .then(data => {
         productos = data;
         cargarProductos(productos);
-})
+    })
 
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
@@ -95,25 +95,25 @@ function agregarAlCarrito(e) {
         duration: 3000,
         close: true,
         gravity: "top",
-        position: "right", 
-        stopOnFocus: true, 
+        position: "right",
+        stopOnFocus: true,
         style: {
-          background: "linear-gradient(to right, #4b33a8, #785ce9)",
-          borderRadius: "2rem",
-          textTransform: "uppercase",
-          fontSize: ".75rem"
+            background: "linear-gradient(to right, #4b33a8, #785ce9)",
+            borderRadius: "2rem",
+            textTransform: "uppercase",
+            fontSize: ".75rem"
         },
         offset: {
-            x: '1.5rem', 
-            y: '1.5rem' 
-          },
-        onClick: function(){} 
-      }).showToast();
+            x: '1.5rem',
+            y: '1.5rem'
+        },
+        onClick: function () { }
+    }).showToast();
 
     const idBoton = e.currentTarget.id;
     const productoAgregado = productos.find(producto => producto.id === idBoton);
 
-    if(productosEnCarrito.some(producto => producto.id === idBoton)) {
+    if (productosEnCarrito.some(producto => producto.id === idBoton)) {
         const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
         productosEnCarrito[index].cantidad++;
     } else {
@@ -129,5 +129,41 @@ function agregarAlCarrito(e) {
 function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     numerito.innerText = nuevoNumerito;
+}
+
+// ! Filtrado de Busquedas
+const productosEnCarrito2 = [];
+
+const formularioBusqueda = document.querySelector(".container-search");
+const inputBusqueda = document.querySelector("#input");
+
+
+
+formularioBusqueda.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const terminoBusqueda = inputBusqueda.value.trim().toLowerCase();
+
+    if (terminoBusqueda !== "") {
+        const productosFiltrados = productos.filter(producto =>
+            normalizarTexto(producto.titulo).toLowerCase().includes(terminoBusqueda)
+        );
+        cargarProductos(productosFiltrados);
+        tituloPrincipal.innerText = `Resultados para "${terminoBusqueda}"`;
+    } else {
+        cargarProductos(productos);
+        tituloPrincipal.innerText = "Todos los productos";
+    }
+});
+
+function actualizarBotonesAgregar() {
+    const botonesAgregar = document.querySelectorAll(".producto-agregar");
+
+    botonesAgregar.forEach(boton => {
+        boton.addEventListener("click", agregarAlCarrito);
+    });
+}
+
+function normalizarTexto(texto) {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
